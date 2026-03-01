@@ -11,7 +11,7 @@ module.exports = {
         background : "#FFFFFF",
         surface : "#F7F7F7",
         accent : "#FF4C3B",
-        border : "#EEEEE",
+        border : "#EEEEEE",
 
       }
     },

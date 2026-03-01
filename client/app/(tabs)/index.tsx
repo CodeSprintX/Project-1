@@ -33,7 +33,7 @@ export default function Home() {
 
         
       <ScrollView horizontal pagingEnabled showsHorizontalScrollIndicator={false} className='w-full h-48 rounded-xl' scrollEventThrottle={16} onScroll={(e)=>{
-        const slide = Math.ceil(e.nativeEvent.contentOffset.x/ e.nativeEvent.layoutMeasurement.width) 
+        const slide = Math.round(e.nativeEvent.contentOffset.x/ e.nativeEvent.layoutMeasurement.width) 
         if(slide !== activeBannerIndex){
           setActiveBannerIndex(slide)
         }
@@ -41,6 +41,7 @@ export default function Home() {
         {BANNERS.map((banner,index)=>(
           <View key={index} className='relative w-full h-48 bg-gray-200 overflow-hidden' style={{width : width - 32}}>
             <Image source={{uri : banner.image }} className='w-full h-full' resizeMode='cover'/>
+            <View className='absolute inset-0 bg-black/40'/>
 
             <View className='absolute bottom-4 left-4 z-10'>
               <Text className='text-white text-2xl font-bold'>{banner.title}</Text>
@@ -50,7 +51,7 @@ export default function Home() {
               </TouchableOpacity>
               
             </View>
-            <View className='absolute inset-0 bg-black/40'/>
+            
           </View>
         ))}
       </ScrollView>
@@ -79,7 +80,7 @@ export default function Home() {
       <View className='mb-8'>
         <View className='flex-row justify-between items-center mb-4'>
           <Text className='text-xl font-bold text-primary'>Popular</Text>
-          <TouchableOpacity onPress={()=>router.push('/shop')}><Text className='text-secondary text-sm'>Sell All</Text></TouchableOpacity>
+          <TouchableOpacity onPress={()=>router.push('/shop')}><Text className='text-secondary text-sm'>See All</Text></TouchableOpacity>
           
         </View>
         {loading ? (
