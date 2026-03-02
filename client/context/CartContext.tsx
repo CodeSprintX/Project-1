@@ -20,7 +20,7 @@ type CartContextType = {
     updateQuantity : (itemId : string, quantity : number, size : string)=> Promise<void>;
     clearCart : ()=> Promise<void>;
     cartTotal: number;
-    itemCout : number;
+    itemCount : number;
     isLoading: boolean;
 }
 
@@ -55,7 +55,7 @@ export function CartProvider({children} : {children : ReactNode}) {
    const updateQuantity = async(productId : string,quantity:number, size : string = 'M')=>{
 
    }
-   const clearCart = async(productId : string,quantity:number, size : string = 'M')=>{
+   const clearCart = async(productId : string, quantity:number, size : string = 'M')=>{
 
    }
 
