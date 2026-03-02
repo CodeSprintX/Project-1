@@ -49,7 +49,7 @@ export default function Cart() {
 
           {/* checkout button */}
           <TouchableOpacity className='bg-primary py-4 rounded-full items-center' onPress={()=>router.push
-            ('/checkout')}>
+            ('/Checkout')}>
             <Text className='text-white font-bold text-base'>Checkout</Text>
           </TouchableOpacity>
 
