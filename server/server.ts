@@ -3,11 +3,16 @@ import express, { Request, Response } from 'express';
 import cors from "cors";
 import connectDB from "./config/db.js";
 import { clerkMiddleware } from '@clerk/express'
+import { clerkWebHook } from "./controllers/webhooks.js";
 
 const app = express();
 
 //Connect to Mongodb
 await connectDB()
+
+app.post('/api/clerk', express.raw({
+    type : "application/json"
+}), clerkWebHook)
 
 // Middleware
 app.use(cors())
