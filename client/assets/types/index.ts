@@ -95,3 +95,5 @@ export interface IWishlist extends Document {
     products: Types.ObjectId[];
     createdAt: Date;
 }
+
+
